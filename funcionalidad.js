@@ -22,9 +22,17 @@ Segundos();
 Minutos();
 Horas();
 Dias();
+setInterval(Tiempofinalizado,1000);
 setInterval(Segundos,1000);
 
+function Tiempofinalizado(){
+    hoy =new Date();
+    if(hoy.getTime()>=fechafutura.getTime()){
+        document.getElementById("barra").style.display="none";
+        document.getElementById("TITULO").innerHTML="!YA DISPONIBLE¡"
+    }
 
+}
 function Segundos(){
     if(seg<0){
         seg=59;
@@ -42,10 +50,6 @@ function Segundos(){
     segundo2.innerHTML=listadeseg[1];
     seg--;
     
-    if(hoy.getTime()>fechafutura.getTime()){
-        document.getElementById("barra").style.display="none";
-        document.getElementById("TITULO").innerHTML="!YA DISPONIBLE¡"
-    }
 }
 
 function Minutos(){
