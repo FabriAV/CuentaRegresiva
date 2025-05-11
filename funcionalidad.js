@@ -1,5 +1,5 @@
 var hoy= new Date();
-var fechafutura= new Date(2026,5,26);
+var fechafutura= new Date(2026,4,26);
 var diferenciamili=fechafutura.getTime()-hoy.getTime();
 var TTsegundos= Math.floor(diferenciamili/1000);       
     
@@ -42,6 +42,10 @@ function Segundos(){
     segundo2.innerHTML=listadeseg[1];
     seg--;
     
+    if(hoy.getTime()>fechafutura.getTime()){
+        document.getElementById("barra").style.display="none";
+        document.getElementById("TITULO").innerHTML="!YA DISPONIBLE¡"
+    }
 }
 
 function Minutos(){
